@@ -13,9 +13,13 @@
 - [Model Evaluation](#model-evaluation)
 - [Future Directions](#future-directions)
 
+# Emotion Recognition Study
+
 ## Current Updates
 
-Significant improvements in model accuracy through hyperparameter tuning using Optuna. Currently exploring advanced data augmentation techniques to further enhance model robustness.
+Recent efforts have focused on enhancing the model's performance by expanding the range of tuned hyperparameters. This approach has successfully increased the model's accuracy to 62.4%. The key adjustments involved fine-tuning learning rate, batch size, weight decay, activation functions, and learning rate scheduler parameters, pinpointing an optimal learning rate around 0.0007 and a batch size of 32, among other specifics.
+
+The next step involves delving into the CNN architecture. The plan is to experiment with layer configurations and activation functions, and to consider integrating techniques like data augmentation and additional regularization methods. The aim is to further refine the model's accuracy and ensure its effectiveness in real-world scenarios.
 
 
 ## Overview
