@@ -15,8 +15,6 @@
 
 ## Current Updates
 
-![Emotion Recognition Progress](https://github.com/yourusername/Emotion-Recognition-Study/assets/latest_update.png)
-
 Significant improvements in model accuracy through hyperparameter tuning using Optuna. Currently exploring advanced data augmentation techniques to further enhance model robustness.
 
 
