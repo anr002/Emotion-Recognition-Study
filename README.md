@@ -18,23 +18,40 @@
 ## Current Updates
 
 Best trial:
+
   Value:  0.6227361382000557
+  
   Params:
+  
     lr: 0.0007990563898285646
+    
     batch_size: 64
+    
     optimizer: Adam
+    
     gamma: 0.37160294471259125
+    
 
 Number of finished trials:  70
+
 Best trial:
+
   Value:  0.6244079130677069
+  
   Params:
+  
     lr: 0.0007013084747072057
+    
     batch_size: 32
+    
     weight_decay: 2.3380234240470766e-10
+    
     activation: ELU
+    
     step_size: 3
+    
     gamma: 0.5835976448586734
+    
 
 Recent efforts have focused on enhancing the model's performance by expanding the range of tuned hyperparameters. This approach has successfully increased the model's accuracy to 62.4%. The key adjustments involved fine-tuning learning rate, batch size, weight decay, activation functions, and learning rate scheduler parameters, pinpointing an optimal learning rate around 0.0007 and a batch size of 32, among other specifics.
 
