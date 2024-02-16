@@ -4,35 +4,49 @@ import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
 import h5py
 import numpy as np
+import torch.nn as nn
+import torch.nn.functional as F
 
 # Set device to GPU if available
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 class CustomCNN(nn.Module):
-    def __init__(self, num_classes):
+    def __init__(self, num_classes, activation='ReLU'):
         super(CustomCNN, self).__init__()
+        # Store the activation function
+        self.activation = self._get_activation(activation)
+        
         self.conv_layers = nn.Sequential(
             nn.Conv2d(1, 64, kernel_size=3, padding='same'),
-            nn.ReLU(),
+            self.activation(),
             nn.BatchNorm2d(64),
             nn.MaxPool2d(kernel_size=2),
             nn.Conv2d(64, 128, kernel_size=3, padding='same'),
-            nn.ReLU(),
+            self.activation(),
             nn.BatchNorm2d(128),
             nn.MaxPool2d(kernel_size=2),
             nn.Conv2d(128, 256, kernel_size=3, padding='same'),
-            nn.ReLU(),
+            self.activation(),
             nn.BatchNorm2d(256),
             nn.MaxPool2d(kernel_size=2),
         )
         self.fc_layers = nn.Sequential(
             nn.Flatten(),
             nn.Linear(256 * 6 * 6, 256),  # Adjust the input features to match your data
-            nn.ReLU(),
+            self.activation(),
             nn.Dropout(0.5),
             nn.Linear(256, num_classes),
-            nn.Softmax(dim=1)
+            # Softmax is not needed here due to nn.CrossEntropyLoss
         )
+
+    def _get_activation(self, name):
+        """Returns the activation function based on the name."""
+        activations = {
+            'ReLU': nn.ReLU,
+            'LeakyReLU': nn.LeakyReLU,
+            'ELU': nn.ELU
+        }
+        return activations.get(name, nn.ReLU)  # Default to ReLU if name not found
 
     def forward(self, x):
         x = self.conv_layers(x)
@@ -57,6 +71,9 @@ def load_data_from_hdf5(hdf5_path):
     test_labels = torch.tensor(test_labels).long()  # Convert labels to Long type
     
     return (train_images, train_labels), (test_images, test_labels)
+
+
+
 
 # Define the input shape and the number of classes
 num_classes = 7
