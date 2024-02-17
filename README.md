@@ -17,6 +17,29 @@
 
 ## Current Updates
 
+Number of finished trials:  100
+
+Best trial:
+
+  Value:  0.6497631652270828
+
+Params: 
+
+    lr: 0.0005586277582505079
+    
+    batch_size: 16
+    
+    weight_decay: 3.843595600124118e-08
+    
+    activation: LeakyReLU
+    
+    step_size: 4
+    
+    gamma: 0.613958230776233
+    
+    optimizer: Adam
+
+
 Best trial:
 
   Value:  0.6227361382000557
