@@ -17,6 +17,65 @@
 
 ## Current Updates
 
+Number of finished trials:  100
+
+Best trial:
+
+  Value:  0.6497631652270828
+
+Params: 
+
+    lr: 0.0005586277582505079
+    
+    batch_size: 16
+    
+    weight_decay: 3.843595600124118e-08
+    
+    activation: LeakyReLU
+    
+    step_size: 4
+    
+    gamma: 0.613958230776233
+    
+    optimizer: Adam
+
+
+Best trial:
+
+  Value:  0.6227361382000557
+  
+  Params:
+  
+    lr: 0.0007990563898285646
+    
+    batch_size: 64
+    
+    optimizer: Adam
+    
+    gamma: 0.37160294471259125
+    
+
+Number of finished trials:  70
+
+Best trial:
+
+  Value:  0.6244079130677069
+  
+  Params:
+  
+    lr: 0.0007013084747072057
+    
+    batch_size: 32
+    
+    weight_decay: 2.3380234240470766e-10
+    
+    activation: ELU
+    
+    step_size: 3
+    
+    gamma: 0.5835976448586734
+    
+
 Recent efforts have focused on enhancing the model's performance by expanding the range of tuned hyperparameters. This approach has successfully increased the model's accuracy to 62.4%. The key adjustments involved fine-tuning learning rate, batch size, weight decay, activation functions, and learning rate scheduler parameters, pinpointing an optimal learning rate around 0.0007 and a batch size of 32, among other specifics.
 
 The next step involves delving into the CNN architecture. The plan is to experiment with layer configurations and activation functions, and to consider integrating techniques like data augmentation and additional regularization methods. The aim is to further refine the model's accuracy and ensure its effectiveness in real-world scenarios.
