@@ -17,6 +17,8 @@
 
 ## Current Updates
 
+I am currently working to combine the power of OpenCV and my model in order to predict emotions of actors in movie clips for live emotion recognition.
+
 Number of finished trials:  100
 
 Best trial:
