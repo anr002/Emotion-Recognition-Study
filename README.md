@@ -25,7 +25,7 @@ I am currently working to combine the power of OpenCV and my model in order to p
 
 
 
-https://github.com/anr002/Emotion-Recognition-Study/assets/59952372/ef28595f-6306-4bb2-82d0-359cfb71dead
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/nt9DN-lKzQ0/0.jpg)](https://www.youtube.com/watch?v=nt9DN-lKzQ0)
 
 
 
