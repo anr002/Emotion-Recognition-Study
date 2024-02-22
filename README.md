@@ -25,8 +25,7 @@ I am currently working to combine the power of OpenCV and my model in order to p
 
 
 
-[![Live Emotion Recognition](![image](https://github.com/anr002/Emotion-Recognition-Study/assets/59952372/ee8252d6-ee56-439d-91b4-ebd05ee182f1)](https://www.youtube.com/watch?v=nt9DN-lKzQ0)
-
+[![Live Emotion Recognition](https://github.com/anr002/Emotion-Recognition-Study/assets/59952372/ee8252d6-ee56-439d-91b4-ebd05ee182f1)](https://www.youtube.com/watch?v=nt9DN-lKzQ0)
 
 
 ![image](https://github.com/anr002/Emotion-Recognition-Study/assets/59952372/2d08fe43-fc90-49cc-a254-bb02d2eacff2)
