@@ -56,7 +56,7 @@ def predict_emotion(model, image_tensor, original_image):
 
 if __name__ == "__main__":
     model_path = 'C://Users//andre//Documents//emotion_recognition_model.pth'  
-    image_path = 'C://Users//andre//Documents//neutral1.jpg'  
+    image_path = 'C://Users//andre//Documents//joshuaCut.jpg'  
     
     model = load_model(model_path)
     original_image = Image.open(image_path) 
