@@ -19,13 +19,12 @@
 
 I was able to incorporate my model with OpenCV to provide live prediction of emotions and it works great. Only issue that there are rapid fluctuations in emotion predictions frame by frame. To combat this, I will incorporate a simple moving average in hopes that this will smooth out everything.
 
+[![Live Emotion Recognition](https://github.com/anr002/Emotion-Recognition-Study/assets/59952372/ee8252d6-ee56-439d-91b4-ebd05ee182f1)](https://www.youtube.com/watch?v=nt9DN-lKzQ0)
+
 ## Current Updates
 
 I am currently working to combine the power of OpenCV and my model in order to predict emotions of actors in movie clips for live emotion recognition.
 
-
-
-[![Live Emotion Recognition](https://github.com/anr002/Emotion-Recognition-Study/assets/59952372/ee8252d6-ee56-439d-91b4-ebd05ee182f1)](https://www.youtube.com/watch?v=nt9DN-lKzQ0)
 
 
 ![image](https://github.com/anr002/Emotion-Recognition-Study/assets/59952372/2d08fe43-fc90-49cc-a254-bb02d2eacff2)
