@@ -11,9 +11,10 @@
   - [Normalization and HDF5 Storage](#normalization-and-hdf5-storage)
 - [Hyperparameter Tuning with Optuna](#hyperparameter-tuning-with-optuna)
 - [Model Evaluation](#model-evaluation)
+- [Integration with OpenCV for Live Emotion Recognition](#integration-with-opencv-for-live-emotion-recognition)
+- [Key Functions](#key-functions)
+- [Libraries Used](#libraries-used)
 - [Future Directions](#future-directions)
-
-# Emotion Recognition Study
 
 ## Issues
 
@@ -25,74 +26,7 @@ I was able to incorporate my model with OpenCV to provide live prediction of emo
 
 I am currently working to combine the power of OpenCV and my model in order to predict emotions of actors in movie clips for live emotion recognition.
 
-
-
 ![image](https://github.com/anr002/Emotion-Recognition-Study/assets/59952372/2d08fe43-fc90-49cc-a254-bb02d2eacff2)
-
-
-Number of finished trials:  100
-
-Best trial:
-
-  Value:  0.6497631652270828
-
-Params: 
-
-    lr: 0.0005586277582505079
-    
-    batch_size: 16
-    
-    weight_decay: 3.843595600124118e-08
-    
-    activation: LeakyReLU
-    
-    step_size: 4
-    
-    gamma: 0.613958230776233
-    
-    optimizer: Adam
-
-
-Best trial:
-
-  Value:  0.6227361382000557
-  
-  Params:
-  
-    lr: 0.0007990563898285646
-    
-    batch_size: 64
-    
-    optimizer: Adam
-    
-    gamma: 0.37160294471259125
-    
-
-Number of finished trials:  70
-
-Best trial:
-
-  Value:  0.6244079130677069
-  
-  Params:
-  
-    lr: 0.0007013084747072057
-    
-    batch_size: 32
-    
-    weight_decay: 2.3380234240470766e-10
-    
-    activation: ELU
-    
-    step_size: 3
-    
-    gamma: 0.5835976448586734
-    
-
-Recent efforts have focused on enhancing the model's performance by expanding the range of tuned hyperparameters. This approach has successfully increased the model's accuracy to 62.4%. The key adjustments involved fine-tuning learning rate, batch size, weight decay, activation functions, and learning rate scheduler parameters, pinpointing an optimal learning rate around 0.0007 and a batch size of 32, among other specifics.
-
-The next step involves delving into the CNN architecture. The plan is to experiment with layer configurations and activation functions, and to consider integrating techniques like data augmentation and additional regularization methods. The aim is to further refine the model's accuracy and ensure its effectiveness in real-world scenarios.
-
 
 ## Overview
 
@@ -101,8 +35,6 @@ This project aims to develop a highly accurate and efficient model for emotion r
 ## Dataset
 
 The dataset used in this study is from FER-2013, which consists of 48x48 pixel grayscale images of faces. The faces have been automatically registered so that the face is more or less centered and occupies about the same amount of space in each image.
-
-The task is to categorize each face based on the emotion shown in the facial expression into one of seven categories (0=Angry, 1=Disgust, 2=Fear, 3=Happy, 4=Sad, 5=Surprise, 6=Neutral). The training set consists of 28,709 examples, and the public test set consists of 3,589 examples.
 
 ## Challenges
 
@@ -118,14 +50,38 @@ The backbone of the emotion recognition system is a custom CNN architecture desi
 
 ### Normalization and HDF5 Storage
 
-A critical step in the preprocessing pipeline is image normalization. By scaling pixel values to a standard range, the model trains more efficiently and avoids biases towards particular intensity ranges. To manage the dataset efficiently, especially considering its size and the need for high-throughput access during training, the data is stored in an HDF5 file. This choice significantly improves data loading times and overall training efficiency. The `preprocess.py` script handles the normalization and storage, ensuring that each image is correctly processed and readily accessible for training.
+A critical step in the preprocessing pipeline is image normalization. By scaling pixel values to a standard range, the model trains more efficiently and avoids biases towards particular intensity ranges.
 
 ## Hyperparameter Tuning with Optuna
 
-To optimize the model's performance, Optuna has been employed for hyperparameter tuning. This process has allowed for systematic exploration of a wide range of configurations, significantly improving model accuracy and stability.
+To optimize the model's performance, Optuna has been used for hyperparameter tuning. This process has allowed for systematic exploration of a wide range of configurations, significantly improving model accuracy and stability.
 
 ## Model Evaluation
 
+## Integration with OpenCV for Live Emotion Recognition
+
+To bring our emotion recognition model into the real world, we've integrated it with OpenCV, enabling live emotion prediction from video streams. This integration faced challenges, notably rapid fluctuations in emotion predictions frame by frame. To address this, we implemented a simple moving average technique, smoothing out the predictions over time and providing a more stable and accurate representation of the subject's emotional state.
+
+Additionally, we refined our OpenCV face detection process to reduce false positives, such as fleeting detections on inanimate objects. By adjusting the `detectMultiScale` parameters and implementing a form of temporal smoothing, we've significantly improved the reliability of face detection.
+
+## Key Functions
+
+- `load_model`: Loads the trained emotion recognition model.
+- `download_youtube_video`: Downloads videos from YouTube for processing.
+- `preprocess_image`: Prepares images for emotion prediction.
+- `predict_emotion`: Predicts the emotion of a given image using the model.
+- `process_video_stream`: Processes video streams for live emotion recognition, integrating face detection, emotion prediction, and display functionalities.
+
+## Libraries Used
+
+- `torch` and `torchvision` for model implementation and image transformations.
+- `cv2` (OpenCV) for video processing and face detection.
+- `PIL` (Pillow) for image file operations.
+- `imageio` for creating GIFs from video frames.
+- `numpy` for numerical operations and data manipulation.
+- `optuna` for hyperparameter optimization to enhance model performance.
 
 ## Future Directions
+
+Moving forward, I plan to explore more advanced techniques for both face detection and emotion recognition. This includes experimenting with different model architectures, such as deeper neural networks or those incorporating attention mechanisms, to improve accuracy. Additionally, I aim to expand the dataset to include more varied facial expressions and environments to further challenge and refine the model. Implementing real-time emotion recognition in more complex video scenes and integrating with other applications for interactive experiences are also on the horizon.
 
