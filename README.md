@@ -23,6 +23,12 @@ I was able to incorporate my model with OpenCV to provide live prediction of emo
 
 I am currently working to combine the power of OpenCV and my model in order to predict emotions of actors in movie clips for live emotion recognition.
 
+
+
+https://github.com/anr002/Emotion-Recognition-Study/assets/59952372/e1670664-26ec-4621-88a4-c3811c80c70a
+
+
+
 ![image](https://github.com/anr002/Emotion-Recognition-Study/assets/59952372/2d08fe43-fc90-49cc-a254-bb02d2eacff2)
 
 
